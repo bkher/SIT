@@ -6,10 +6,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.http.Header;
+import org.apache.http.HttpEntity;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.methods.HttpPut;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
@@ -46,6 +48,38 @@ public class restClient {
 		CloseableHttpClient httpscliet =  HttpClients.createDefault();
 		HttpPost httppost = new HttpPost(url);
 		httppost.setEntity(new StringEntity(payload));
+				
+		for (Map.Entry<String, String> entry : headermap.entrySet()) {
+			httppost.addHeader(entry.getKey(), entry.getValue());
+		}
+		CloseableHttpResponse closeableresponse = httpscliet.execute(httppost);
+		return closeableresponse;
+	}
+	
+	
+	public CloseableHttpResponse put(String url, String payload, HashMap<String, String> headermap) throws ClientProtocolException, IOException {
+		
+		CloseableHttpClient httpclient =  HttpClients.createDefault();
+		HttpPut httpput =  new HttpPut(url);
+		httpput.setEntity(new StringEntity(payload));
+		
+		for (Map.Entry<String, String> entry : headermap.entrySet()) {
+			httpput.addHeader(entry.getKey(), entry.getValue());
+		}
+		
+		CloseableHttpResponse closeableresponse = httpclient.execute(httpput);
+		return closeableresponse;
+
+	}
+	
+	
+public CloseableHttpResponse post1(String url, String payload, HashMap<String, String> headermap) throws ClientProtocolException, IOException {
+		
+		CloseableHttpClient httpscliet =  HttpClients.createDefault();
+		HttpPost httppost = new HttpPost(url);
+		httppost.setEntity(new StringEntity(payload));
+		
+//		httppost.setEntity(payload);
 		
 		for (Map.Entry<String, String> entry : headermap.entrySet()) {
 			httppost.addHeader(entry.getKey(), entry.getValue());

@@ -41,7 +41,7 @@ public class GetAPITest extends TestBase {
 		headermap.put("Content-Type", "application/json");
 		
 		ObjectMapper mapper =  new ObjectMapper();
-		users =  new users("naf","docittlender@gmail.com","Jan@2017");
+		users =  new users();
 		mapper.writeValue(new File("F:\\EclipsePractice\\SIT\\src\\main\\java\\com\\qa\\data\\User.json"), users);
 		String UserJsonString = mapper.writeValueAsString(users);
 		
@@ -86,6 +86,5 @@ public class GetAPITest extends TestBase {
 		System.out.println("Header array ... "+ allheaders);
 		
 	}
-	
-	
+
 }

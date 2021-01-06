@@ -1,21 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="2606" started-at="2021-01-01T19:15:08Z" finished-at="2021-01-01T19:15:11Z">
+  <suite name="Default suite" duration-ms="35274" started-at="2021-01-06T14:57:17Z" finished-at="2021-01-06T14:57:52Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="2606" started-at="2021-01-01T19:15:08Z" finished-at="2021-01-01T19:15:11Z">
-      <class name="com.qa.tests.GetAPITest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.qa.tests.GetAPITest@4590c9c3]" name="setUp" is-config="true" duration-ms="8" started-at="2021-01-02T00:45:08Z" finished-at="2021-01-02T00:45:08Z">
+    <test name="Default test" duration-ms="35274" started-at="2021-01-06T14:57:17Z" finished-at="2021-01-06T14:57:52Z">
+      <class name="com.qa.tests.SITWorkflow">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.qa.tests.SITWorkflow@573f2bb1]" name="setUp" is-config="true" duration-ms="7042" started-at="2021-01-06T20:27:17Z" finished-at="2021-01-06T20:27:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="getTest()[pri:0, instance:com.qa.tests.GetAPITest@4590c9c3]" name="getTest" duration-ms="2583" started-at="2021-01-02T00:45:08Z" finished-at="2021-01-02T00:45:11Z">
+        <test-method status="PASS" signature="inviteBorrower()[pri:1, instance:com.qa.tests.SITWorkflow@573f2bb1]" name="inviteBorrower" duration-ms="3941" started-at="2021-01-06T20:27:24Z" finished-at="2021-01-06T20:27:28Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getTest -->
-      </class> <!-- com.qa.tests.GetAPITest -->
+        </test-method> <!-- inviteBorrower -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.qa.tests.SITWorkflow@573f2bb1]" name="setUp" is-config="true" duration-ms="2043" started-at="2021-01-06T20:27:28Z" finished-at="2021-01-06T20:27:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="CreateBorrower()[pri:2, instance:com.qa.tests.SITWorkflow@573f2bb1]" name="CreateBorrower" duration-ms="8911" started-at="2021-01-06T20:27:30Z" finished-at="2021-01-06T20:27:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CreateBorrower -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.qa.tests.SITWorkflow@573f2bb1]" name="setUp" is-config="true" duration-ms="2039" started-at="2021-01-06T20:27:39Z" finished-at="2021-01-06T20:27:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="UpdateBorrowerProfile()[pri:3, instance:com.qa.tests.SITWorkflow@573f2bb1]" name="UpdateBorrowerProfile" duration-ms="3378" started-at="2021-01-06T20:27:41Z" finished-at="2021-01-06T20:27:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UpdateBorrowerProfile -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.qa.tests.SITWorkflow@573f2bb1]" name="setUp" is-config="true" duration-ms="1967" started-at="2021-01-06T20:27:44Z" finished-at="2021-01-06T20:27:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="UpdateBorrowerIncome()[pri:4, instance:com.qa.tests.SITWorkflow@573f2bb1]" name="UpdateBorrowerIncome" duration-ms="1958" started-at="2021-01-06T20:27:46Z" finished-at="2021-01-06T20:27:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UpdateBorrowerIncome -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.qa.tests.SITWorkflow@573f2bb1]" name="setUp" is-config="true" duration-ms="1900" started-at="2021-01-06T20:27:48Z" finished-at="2021-01-06T20:27:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="UpdateBorrowerDeclaration()[pri:5, instance:com.qa.tests.SITWorkflow@573f2bb1]" name="UpdateBorrowerDeclaration" duration-ms="2044" started-at="2021-01-06T20:27:50Z" finished-at="2021-01-06T20:27:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UpdateBorrowerDeclaration -->
+      </class> <!-- com.qa.tests.SITWorkflow -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

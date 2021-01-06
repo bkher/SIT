@@ -1,5 +1,8 @@
 package com.qa.utils;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -18,5 +21,12 @@ public class testUtils {
 		return obj.toString();
 	}
 	
+	
+	public static String generateRandomEmail() { 
+	    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd.MM.yyyy-HH.mm.ss");
+	    String date = simpleDateFormat.format(new Date());
+	    String email = "test+" + date + "@gmail.com";
+	    return email;
+	}
 	
 }

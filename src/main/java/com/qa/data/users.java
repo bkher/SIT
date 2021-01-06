@@ -2,24 +2,21 @@ package com.qa.data;
 
 public class users {
 
-	String Tenant;
-	String username;
-	String password;
+	String Tenant="naf";
+	String username="docittlender@gmail.com";
+	String password="Jan@2017";
 	
 	
 	public users() {
-		
-	}
-	
-	
-	public users(String Tenant,String username, String password) {
-		
-		this.Tenant= Tenant;
-		this.username= username;
-		this.password = password;	
-	}
 
+	}	
 
+	/*
+	 * public users(String Tenant,String username, String password) {
+	 * 
+	 * this.Tenant= Tenant; this.username= username; this.password = password; }
+	 */
+	
 	public String getTenant() {
 		return Tenant;
 	}

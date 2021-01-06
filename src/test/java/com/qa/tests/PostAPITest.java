@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 
+import org.apache.http.HttpEntity;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.util.EntityUtils;
@@ -44,7 +45,7 @@ public class PostAPITest extends TestBase{
 		
 	}
 	
-	@Test
+	@Test(enabled = false)
 	public void postAPITest() throws JsonGenerationException, JsonMappingException, IOException {
 		
 		restclient = new restClient();
@@ -53,7 +54,7 @@ public class PostAPITest extends TestBase{
 		headermap.put("Content-Type", "application/json");
 		
 		ObjectMapper mapper =  new ObjectMapper();
-		users =  new users("naf","docittlender@gmail.com","Jan@2017");
+		users =  new users();
 		mapper.writeValue(new File("F:\\EclipsePractice\\SIT\\src\\main\\java\\com\\qa\\data\\User.json"), users);
 		
 		String UserJsonString = mapper.writeValueAsString(users);
@@ -76,4 +77,44 @@ public class PostAPITest extends TestBase{
 		
 	}
 	
+	
+	@Test(enabled = true)
+	public void postAPITest1() throws JsonGenerationException, JsonMappingException, IOException {
+		
+		restclient = new restClient();
+		
+		HashMap<String, String> headermap = new HashMap<String, String>();
+		headermap.put("Content-Type", "application/json");
+		
+		String body = "{\r\n" + 
+				"   \"Tenant\" :\"naf\",\r\n" + 
+				"   \"username\": \"docittlender@gmail.com\",\r\n" + 
+				"   \"password\": \"Jan@2017\"\r\n" + 
+				"}";
+		
+	
+//		ObjectMapper mapper =  new ObjectMapper();
+//		users =  new users();
+//		mapper.writeValue(new File("F:\\EclipsePractice\\SIT\\src\\main\\java\\com\\qa\\data\\User.json"), users);
+		
+//		String UserJsonString = mapper.writeValueAsString(users);
+		
+//		System.out.println(body);
+		
+		closeableHttpResponse = restclient.post1(url, body, headermap);
+		
+		int ststuscode = closeableHttpResponse.getStatusLine().getStatusCode();
+		System.out.println(closeableHttpResponse.toString());
+		
+		Assert.assertEquals(ststuscode,STATUS_RESPONSE_CODE_200);
+		
+		String responseString =EntityUtils.toString(closeableHttpResponse.getEntity(),"UTF-8");
+		
+		JSONObject jsonObj = new JSONObject(responseString);
+		System.out.println("respinse in Json.. "+jsonObj);
+		
+		String  token = utilitobj.getvlueByJpath(jsonObj,"token");
+		System.out.println("token is "+token);
+		
+	}
 }

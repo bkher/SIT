@@ -3,12 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.qa.tests.GetAPITest">
+      <class name="com.qa.tests.SITWorkflow">
         <methods>
-          <include name="getTest"/>
+          <include name="CreateBorrower"/>
+          <include name="UpdateBorrowerProfile"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- com.qa.tests.GetAPITest -->
+      </class> <!-- com.qa.tests.SITWorkflow -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
