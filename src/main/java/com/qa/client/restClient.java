@@ -2,13 +2,18 @@ package com.qa.client;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
+import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
@@ -73,11 +78,12 @@ public class restClient {
 	}
 	
 	
-public CloseableHttpResponse post1(String url, String payload, HashMap<String, String> headermap) throws ClientProtocolException, IOException {
+	public CloseableHttpResponse postwihformdata(String url, List<NameValuePair> urlParameters, HashMap<String, String> headermap) throws ClientProtocolException, IOException {
 		
 		CloseableHttpClient httpscliet =  HttpClients.createDefault();
 		HttpPost httppost = new HttpPost(url);
-		httppost.setEntity(new StringEntity(payload));
+		httppost.setEntity(new UrlEncodedFormEntity(urlParameters));
+		
 		
 //		httppost.setEntity(payload);
 		
@@ -87,4 +93,15 @@ public CloseableHttpResponse post1(String url, String payload, HashMap<String, S
 		CloseableHttpResponse closeableresponse = httpscliet.execute(httppost);
 		return closeableresponse;
 	}
+	
+	public CloseableHttpResponse delete(String url, HashMap<String, String> headermap) throws ClientProtocolException, IOException {
+		CloseableHttpClient httpsClient = HttpClients.createDefault();
+		
+		HttpDelete httpsdelete =  new HttpDelete(url);
+		for (Map.Entry<String, String> entry : headermap.entrySet()) {
+			httpsdelete.addHeader(entry.getKey(), entry.getValue());
+		}
+		CloseableHttpResponse closeableHttpResponse = httpsClient.execute(httpsdelete);
+		return closeableHttpResponse;
+		}
 }

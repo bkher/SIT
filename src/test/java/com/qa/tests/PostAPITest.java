@@ -101,7 +101,7 @@ public class PostAPITest extends TestBase{
 		
 //		System.out.println(body);
 		
-		closeableHttpResponse = restclient.post1(url, body, headermap);
+		closeableHttpResponse = restclient.post(url, body, headermap);
 		
 		int ststuscode = closeableHttpResponse.getStatusLine().getStatusCode();
 		System.out.println(closeableHttpResponse.toString());
