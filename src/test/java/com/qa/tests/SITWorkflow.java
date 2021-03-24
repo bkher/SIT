@@ -32,6 +32,7 @@ import com.qa.utils.testUtils;
 
 import TestData.ProfileData;
 import restAPI.TestBase;
+import validations.LOdetailsVerification;
 
 public class SITWorkflow extends TestBase {
 
@@ -1110,7 +1111,10 @@ public class SITWorkflow extends TestBase {
 			Assert.assertEquals(ststuscode, STATUS_RESPONSE_CODE_200, "status code is nt 200 ok");
 		}else {	
 			System.out.println("Get LoanOfficerDetails endpoin response : "+ jsonObj);
-		}				
+		}
+		
+		LOdetailsVerification lodetailsVerification = new LOdetailsVerification();
+		lodetailsVerification.responsevalidation(jsonObj);
 	}
 	
 	@Test(priority=29,enabled=true)
@@ -1438,5 +1442,6 @@ public class SITWorkflow extends TestBase {
 			System.out.println("Get RedirectToConditionsScreen endpoin response : "+ responseString);
 		}								
 	}
+	
 	
 }
