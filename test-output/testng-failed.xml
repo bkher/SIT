@@ -5,8 +5,7 @@
     <classes>
       <class name="com.qa.tests.SITWorkflow">
         <methods>
-          <include name="CreateBorrower"/>
-          <include name="UpdateBorrowerProfile"/>
+          <include name="getAllLoanDetails"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- com.qa.tests.SITWorkflow -->
