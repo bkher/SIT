@@ -5,7 +5,38 @@
     <classes>
       <class name="com.qa.tests.SITWorkflow">
         <methods>
+          <include name="getBorrowerList"/>
+          <include name="getBorrowerProfileDetails"/>
+          <include name="getLoandata"/>
+          <include name="UpdateIncome"/>
+          <include name="getLoanOfficerDetails"/>
+          <include name="getLoaninReviewStatus"/>
+          <include name="updatedeclaration"/>
+          <include name="updateprofiledata"/>
+          <include name="getBorrowerAsset"/>
+          <include name="getLoansOfLoanofficer"/>
+          <include name="getLoanOfficerList"/>
+          <include name="getBorrowerIncome"/>
+          <include name="getBorrowerPrfile"/>
+          <include name="getBrandedCodeOfLoanofficer"/>
+          <include name="getAllLoaninReviewStatus"/>
+          <include name="getLoansByBorrowerUsername"/>
+          <include name="getAllCLosedLoansDetails"/>
+          <include name="getBorrowerDeclaration"/>
+          <include name="CreateBorrower"/>
+          <include name="RedirectToSummaryScreen"/>
+          <include name="getApplicationdata"/>
+          <include name="getAllActiveLoanDetails"/>
+          <include name="getBorrowerLogs"/>
+          <include name="getLoanLogs"/>
+          <include name="getSummaryOfLoan"/>
+          <include name="RedirectToDocumentScreen"/>
           <include name="getAllLoanDetails"/>
+          <include name="getBorrowerByUsername"/>
+          <include name="getAllApplicationsDetails"/>
+          <include name="inviteBorrower"/>
+          <include name="RedirectToConditionsScreen"/>
+          <include name="getBorrowerLiabilities"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- com.qa.tests.SITWorkflow -->

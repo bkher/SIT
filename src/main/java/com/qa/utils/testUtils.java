@@ -8,7 +8,7 @@ import org.json.JSONObject;
 
 public class testUtils {
 
-	public String getvlueByJpath(JSONObject responsejson, String Jpath) {
+	public static String getvlueByJpath(JSONObject responsejson, String Jpath) {
 
 		Object obj = responsejson;
 		for (String s : Jpath.split("/"))

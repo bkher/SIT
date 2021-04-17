@@ -28,6 +28,7 @@ import com.qa.utils.testUtils;
 
 import TestData.ProfileData;
 import restAPI.TestBase;
+import validations.CreateBorrwerResponseValdation;
 import validations.InviteBorrwerResponseValdation;
 import validations.LOdetailsVerification;
 
@@ -146,6 +147,9 @@ public class SITWorkflow extends TestBase {
 
 		loanid = utilitobj.getvlueByJpath(jsonObj, "loanId");
 		System.out.println("Loan id " + loanid);
+
+		CreateBorrwerResponseValdation CreateBorrowerValidation = new CreateBorrwerResponseValdation();
+		CreateBorrowerValidation.responsevalidation(jsonObj);
 
 	}
 
