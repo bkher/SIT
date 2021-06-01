@@ -14,6 +14,7 @@ import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -25,6 +26,8 @@ import com.qa.data.CreateLoansUsingInvitationToken;
 import com.qa.data.InviteUserData;
 import com.qa.data.users;
 import com.qa.utils.testUtils;
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
 
 import TestData.ProfileData;
 import restAPI.TestBase;
@@ -51,7 +54,16 @@ public class SITWorkflow extends TestBase {
 	String closedloanid = "DOC002204";
 	String DocumetnID;
 	ProfileData Profiledata;
+	static ExtentReports report;
+	static ExtentTest test;
 
+	@BeforeClass 
+	public static void starttest() {
+		report = new ExtentReports(System.getProperty("user.dir")+"ExtentReportResults.html");
+		test = report.startTest("ExtentDemo");
+	
+	}
+	
 	@BeforeTest
 	public void setUp() throws ClientProtocolException, IOException {
 		testbase = new TestBase();
@@ -77,6 +89,7 @@ public class SITWorkflow extends TestBase {
 		JSONObject jsonObj = new JSONObject(responseString);
 		token = utilitobj.getvlueByJpath(jsonObj, "token");
 		token = "Bearer " + token;
+		
 	}
 
 	@Test(priority = 1, enabled = true)
